@@ -1,4 +1,22 @@
-remote_theme: pages-themes/time-machine@v0.2.0 plugins:
-- jekyll-remote-theme * add this line to the plugins List if you already have one
-title: [YOUR NAME]
-description: [Turning Data into insights]
+title: Kavita Chauhan
+description: iOS Developer · Building Clean & Scalable Apps
+
+remote_theme: mmistakes/minimal-mistakes
+
+plugins:
+  - jekyll-remote-theme
+
+minimal_mistakes_skin: default
+
+# Site Settings
+name: Kavita Chauhan
+author: Kavita Chauhan
+
+# Navigation
+nav:
+  - title: "Projects"
+    url: /projects/
+  - title: "Experience"
+    url: /experience/
+  - title: "Skills"
+    url: /skills/
