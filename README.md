@@ -1,33 +1,37 @@
-# Kavita Chauhan
+# Kavita Chauhan  
 ### iOS Developer
 
-Building clean, scalable, and user-focused iOS applications using Swift, UIKit, and SwiftUI.
+Building clean, scalable, and user-focused iOS applications.
 
 ---
 
 ## 📱 Featured Apps
 
-### Celerity Driver
-A logistics-focused driver application designed for real-time trip management and workflow optimization.
+<div class="app-card">
 
-**Key Highlights**
+### Celerity Driver  
+A logistics-focused driver application built for real-time operations.
+
 - Real-time trip updates  
-- Driver workflow management  
-- Optimized performance for smooth usage  
+- Driver workflow optimization  
+- High-performance UI  
 
 🔗 https://apps.apple.com/in/app/celerity-driver/id6739524034  
 
----
+</div>
 
-### Mitsubishi Electric Automation
-An enterprise-level application focused on industrial automation and performance optimization.
+<div class="app-card">
 
-**Key Highlights**
+### Mitsubishi Electric Automation  
+Enterprise application focused on industrial automation.
+
 - Scalable architecture  
-- Improved UI performance  
-- Efficient data handling  
+- Optimized performance  
+- Clean UI  
 
 🔗 https://apps.apple.com/in/app/mitsubishi-electric-automation/id6444131858  
+
+</div>
 
 ---
 
@@ -35,56 +39,47 @@ An enterprise-level application focused on industrial automation and performance
 
 **Brucode Technologies Pvt Ltd**  
 *July 2024 – Present*  
-- Developing scalable iOS applications  
-- Working on real-time features and performance optimization  
+Building scalable iOS applications with performance-focused solutions.
 
 **CS Soft Solutions Pvt Ltd**  
 *April 2023 – April 2024*  
-- Built logistics and enterprise-level applications  
-- Developed document scanning solutions  
-- Improved app performance and UI  
+Worked on logistics, enterprise apps, and document scanning solutions.
 
 **Quadtrics Solutions Pvt Ltd**  
 *Aug 2022 – March 2023*  
-- Worked on MindVit and Zera Financial apps  
-- Focused on UI development and API integration  
+Focused on UI development, APIs, and architecture patterns.
 
 ---
 
 ## 🛠️ Skills
 
 **iOS Development**  
-Swift, UIKit, SwiftUI  
+Swift · UIKit · SwiftUI  
 
 **Architecture**  
-MVC, MVVM, Clean Architecture  
+MVC · MVVM · Clean Architecture  
 
 **Data & Networking**  
-CoreData, SwiftData, REST APIs, URLSession  
+CoreData · SwiftData · REST APIs  
 
 **Tools**  
-Xcode, Git, GitHub  
-
-**Other**  
-Push Notifications, Payment Gateway Integration,  
-Social Authentication, Debugging, Memory Management  
+Xcode · Git · GitHub  
 
 ---
 
 ## 💡 What I Do
 
-- Build scalable and maintainable iOS applications  
-- Design clean and intuitive user interfaces  
-- Implement modern architecture patterns  
-- Optimize app performance and memory usage  
+- Build scalable and maintainable iOS apps  
+- Design clean and intuitive UI  
+- Optimize performance and memory usage  
 
 ---
 
 ## 🌱 Currently Focused On
 
-- Advanced SwiftUI development  
+- Advanced SwiftUI  
 - Performance optimization  
-- Scalable architecture design  
+- Scalable architecture  
 
 ---
 
