@@ -75,7 +75,7 @@ Logistics-focused driver application designed for real-time operations and optim
 - Smooth user experience
 
 🔗 App Store:  
-https://apps.apple.com/in/app/celerity-driver/id6739524034](https://apps.apple.com/in/app/hublix-sp/id6754014509
+https://apps.apple.com/in/app/hublix-sp/id6754014509
 
 ---
 
