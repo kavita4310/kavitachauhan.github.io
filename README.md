@@ -13,7 +13,7 @@ Focused on clean architecture, performance optimization, and delivering smooth u
 - 🧠 Strong understanding of MVC, MVVM & design patterns
 - ⚡ Experienced in performance optimization & memory management
 - 🎨 Passionate about clean UI/UX implementation
-- 🤝 Comfortable with client communication & agile collaboration
+- 🤝 Comfortable with client communication & team collaboration
 - 🌱 Currently learning Flutter & Dart for cross-platform development
 
 ---
@@ -75,7 +75,7 @@ Logistics-focused driver application designed for real-time operations and optim
 - Smooth user experience
 
 🔗 App Store:  
-https://apps.apple.com/in/app/celerity-driver/id6739524034
+https://apps.apple.com/in/app/celerity-driver/id6739524034](https://apps.apple.com/in/app/hublix-sp/id6754014509
 
 ---
 
