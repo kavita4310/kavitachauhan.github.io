@@ -1,4 +1,23 @@
 title: Kavita Chauhan
-description: iOS Developer · Building Clean & Scalable Apps
+description: iOS Developer • Swift • SwiftUI • Building Clean & Scalable Apps
 
 theme: jekyll-theme-cayman
+
+show_downloads: false
+
+github:
+  is_project_page: false
+
+plugins:
+  - jekyll-seo-tag
+
+seo:
+  name: Kavita Chauhan
+  type: Person
+  links:
+    - https://www.linkedin.com/in/kavita-chauhan-825726296
+
+social:
+  name: Kavita Chauhan
+  links:
+    - https://www.linkedin.com/in/kavita-chauhan-825726296
