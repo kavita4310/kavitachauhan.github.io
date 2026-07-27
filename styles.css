@@ -6,7 +6,6 @@
     --primary-color: #007AFF;
     --primary-dark: #0051D5;
     --secondary-color: #5AC8FA;
-    --dark-bg: #0F172A;
     --light-bg: #F8FAFC;
     --card-bg: #FFFFFF;
     --text-primary: #1E293B;
@@ -16,6 +15,35 @@
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
     --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+    --light-bg: #0F172A;
+    --card-bg: #1A202C;
+    --text-primary: #F1F5F9;
+    --text-secondary: #CBD5E1;
+    --border-color: #334155;
+}
+
+/* Light Theme (Explicit) */
+[data-theme="light"] {
+    --light-bg: #F8FAFC;
+    --card-bg: #FFFFFF;
+    --text-primary: #1E293B;
+    --text-secondary: #64748B;
+    --border-color: #E2E8F0;
+}
+
+/* System Dark Mode (Auto) */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --light-bg: #0F172A;
+        --card-bg: #1A202C;
+        --text-primary: #F1F5F9;
+        --text-secondary: #CBD5E1;
+        --border-color: #334155;
+    }
 }
 
 * {
@@ -33,6 +61,7 @@ body {
     background-color: var(--light-bg);
     color: var(--text-primary);
     line-height: 1.6;
+    transition: background-color var(--transition), color var(--transition);
 }
 
 /* ===========================
@@ -89,6 +118,7 @@ a:hover {
 
 section {
     padding: 5rem 0;
+    transition: background-color var(--transition);
 }
 
 @media (max-width: 768px) {
@@ -119,6 +149,7 @@ section {
     position: sticky;
     top: 0;
     z-index: 1000;
+    transition: background-color var(--transition);
 }
 
 .navbar-content {
@@ -126,6 +157,7 @@ section {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
+    gap: 1rem;
 }
 
 .logo {
@@ -150,6 +182,33 @@ section {
     color: var(--primary-color);
 }
 
+.theme-selector {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.theme-btn {
+    background-color: transparent;
+    border: 2px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--text-primary);
+}
+
+.theme-btn:hover {
+    border-color: var(--primary-color);
+    background-color: rgba(0, 122, 255, 0.1);
+}
+
+.theme-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
 @media (max-width: 768px) {
     .nav-links {
         gap: 1rem;
@@ -158,6 +217,15 @@ section {
 
     .logo {
         font-size: 1.2rem;
+    }
+
+    .theme-selector {
+        gap: 0.3rem;
+    }
+
+    .theme-btn {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.9rem;
     }
 }
 
@@ -206,6 +274,15 @@ section {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     padding: 6rem 0;
     text-align: center;
+    transition: background var(--transition);
+}
+
+[data-theme="dark"] .hero {
+    background: linear-gradient(135deg, #1A202C 0%, #0F172A 100%);
+}
+
+[data-theme="light"] .hero {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
 .hero-content h1 {
@@ -336,6 +413,7 @@ section {
     border-left: 4px solid var(--primary-color);
     word-break: break-word;
     overflow-wrap: break-word;
+    transition: background-color var(--transition);
 }
 
 .info-item strong {
@@ -591,6 +669,7 @@ section {
     font-weight: 500;
     border: 1px solid var(--primary-color);
     white-space: nowrap;
+    transition: background-color var(--transition);
 }
 
 .project-tech {
@@ -638,6 +717,7 @@ section {
     padding: 1.5rem;
     border-radius: 0.5rem;
     border-left: 4px solid var(--secondary-color);
+    transition: background-color var(--transition);
 }
 
 .education-item h3 {
@@ -663,8 +743,17 @@ section {
    =========================== */
 
 .contact {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    background: #0066CC;
     color: white;
+    transition: background var(--transition);
+}
+
+[data-theme="dark"] .contact {
+    background: #004A99;
+}
+
+[data-theme="light"] .contact {
+    background: #0066CC;
 }
 
 .contact h2 {
@@ -686,7 +775,7 @@ section {
 }
 
 .contact-card {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.12);
     padding: 1.5rem;
     border-radius: 0.5rem;
     text-decoration: none;
@@ -701,7 +790,7 @@ section {
 }
 
 .contact-card:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.18);
     transform: translateY(-2px);
 }
 
@@ -741,11 +830,20 @@ section {
    =========================== */
 
 .footer {
-    background-color: var(--text-primary);
+    background-color: #1A1A1A;
     color: white;
     padding: 2rem 0;
     text-align: center;
     border-top: 1px solid var(--border-color);
+    transition: background-color var(--transition);
+}
+
+[data-theme="dark"] .footer {
+    background-color: #0D0D0D;
+}
+
+[data-theme="light"] .footer {
+    background-color: #1A1A1A;
 }
 
 .footer p {
@@ -770,24 +868,6 @@ section {
     * {
         animation: none !important;
         transition: none !important;
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --light-bg: #1E293B;
-        --card-bg: #0F172A;
-        --text-primary: #F1F5F9;
-        --text-secondary: #CBD5E1;
-        --border-color: #334155;
-    }
-
-    body {
-        background-color: var(--card-bg);
-    }
-
-    .hero {
-        background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
     }
 }
 

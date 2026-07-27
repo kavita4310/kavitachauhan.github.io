@@ -1,4 +1,60 @@
 // ===========================
+// Theme Management
+// ===========================
+
+const themeManager = (() => {
+    const THEME_KEY = 'portfolio-theme';
+    const THEMES = {
+        AUTO: 'auto',
+        LIGHT: 'light',
+        DARK: 'dark'
+    };
+
+    const init = () => {
+        const savedTheme = localStorage.getItem(THEME_KEY) || THEMES.AUTO;
+        setTheme(savedTheme);
+        attachEventListeners();
+    };
+
+    const setTheme = (theme) => {
+        localStorage.setItem(THEME_KEY, theme);
+        updateThemeButtons(theme);
+
+        if (theme === THEMES.AUTO) {
+            document.documentElement.removeAttribute('data-theme');
+        } else if (theme === THEMES.LIGHT) {
+            document.documentElement.setAttribute('data-theme', 'light');
+        } else if (theme === THEMES.DARK) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    };
+
+    const updateThemeButtons = (activeTheme) => {
+        document.querySelectorAll('.theme-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        if (activeTheme === THEMES.AUTO) {
+            document.getElementById('autoTheme').classList.add('active');
+        } else if (activeTheme === THEMES.LIGHT) {
+            document.getElementById('lightTheme').classList.add('active');
+        } else if (activeTheme === THEMES.DARK) {
+            document.getElementById('darkTheme').classList.add('active');
+        }
+    };
+
+    const attachEventListeners = () => {
+        document.getElementById('autoTheme')?.addEventListener('click', () => setTheme(THEMES.AUTO));
+        document.getElementById('lightTheme')?.addEventListener('click', () => setTheme(THEMES.LIGHT));
+        document.getElementById('darkTheme')?.addEventListener('click', () => setTheme(THEMES.DARK));
+    };
+
+    return { init, setTheme };
+})();
+
+themeManager.init();
+
+// ===========================
 // Smooth Scrolling Enhancement
 // ===========================
 
@@ -71,7 +127,7 @@ document.querySelectorAll('.skill-category, .experience-item, .project-card, .ed
 });
 
 // ===========================
-// Mobile Navigation Toggle (Optional enhancement)
+// Mobile Navigation Toggle
 // ===========================
 
 const handleMobileNav = () => {
@@ -123,7 +179,7 @@ document.querySelectorAll('a[href^="tel:"]').forEach(link => {
 });
 
 // ===========================
-// Lazy Loading Images (if added in future)
+// Lazy Loading Images
 // ===========================
 
 if ('IntersectionObserver' in window) {
