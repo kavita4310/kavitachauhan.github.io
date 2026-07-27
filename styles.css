@@ -69,6 +69,8 @@ a {
     color: var(--primary-color);
     text-decoration: none;
     transition: var(--transition);
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 a:hover {
@@ -332,6 +334,8 @@ section {
     background-color: var(--light-bg);
     border-radius: 0.5rem;
     border-left: 4px solid var(--primary-color);
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .info-item strong {
@@ -343,6 +347,7 @@ section {
 .info-item a {
     color: var(--primary-color);
     font-weight: 500;
+    word-break: break-word;
 }
 
 @media (max-width: 768px) {
@@ -500,19 +505,21 @@ section {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
 }
 
 .project-card {
     background-color: var(--card-bg);
     border-radius: 0.5rem;
-    padding: 2rem;
+    padding: 1.5rem;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
+    max-height: 600px;
+    overflow: hidden;
 }
 
 .project-card:hover {
@@ -526,23 +533,30 @@ section {
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 1rem;
-    gap: 1rem;
+    gap: 0.75rem;
+    flex-wrap: wrap;
 }
 
 .project-header h3 {
     margin: 0;
+    font-size: 1.2rem;
     flex: 1;
+    min-width: 0;
+    word-break: break-word;
 }
 
 .project-link,
 .production-app {
     background-color: var(--primary-color);
     color: white;
-    padding: 0.4rem 0.8rem;
+    padding: 0.3rem 0.6rem;
     border-radius: 0.3rem;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 600;
-    white-space: nowrap;
+    white-space: normal;
+    flex-shrink: 0;
+    text-align: center;
+    max-width: 100px;
 }
 
 .production-app {
@@ -550,31 +564,39 @@ section {
 }
 
 .project-description {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     flex-grow: 1;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .project-features {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
 }
 
 .feature {
     background-color: var(--light-bg);
     color: var(--primary-color);
-    padding: 0.4rem 0.8rem;
-    border-radius: 0.3rem;
-    font-size: 0.85rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
     font-weight: 500;
     border: 1px solid var(--primary-color);
+    white-space: nowrap;
 }
 
 .project-tech {
     border-top: 1px solid var(--border-color);
-    padding-top: 1rem;
-    font-size: 0.9rem;
+    padding-top: 0.75rem;
+    font-size: 0.85rem;
 }
 
 .project-tech strong {
@@ -588,6 +610,12 @@ section {
 
     .project-header {
         flex-direction: column;
+    }
+
+    .project-link,
+    .production-app {
+        max-width: none;
+        width: 100%;
     }
 }
 
@@ -621,6 +649,7 @@ section {
     color: var(--primary-color);
     font-weight: 600;
     margin: 0.5rem 0;
+    word-break: break-word;
 }
 
 .year {
@@ -652,13 +681,13 @@ section {
 
 .contact-methods {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
 }
 
 .contact-card {
     background-color: rgba(255, 255, 255, 0.1);
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 0.5rem;
     text-decoration: none;
     color: white;
@@ -666,7 +695,9 @@ section {
     border: 1px solid rgba(255, 255, 255, 0.2);
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .contact-card:hover {
@@ -675,23 +706,33 @@ section {
 }
 
 .contact-icon {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    flex-shrink: 0;
 }
 
 .contact-card h3 {
     margin: 0;
     color: white;
+    font-size: 1.1rem;
 }
 
 .contact-card p {
     margin: 0;
     color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    word-break: break-word;
 }
 
 @media (max-width: 768px) {
     .contact-card {
         flex-direction: column;
         text-align: center;
+        padding: 1.25rem;
+    }
+
+    .contact-methods {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
     }
 }
 
@@ -710,6 +751,7 @@ section {
 .footer p {
     margin: 0.5rem 0;
     color: rgba(255, 255, 255, 0.8);
+    word-break: break-word;
 }
 
 .footer a {
