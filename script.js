@@ -18,7 +18,7 @@ const themeManager = (() => {
 
     const setTheme = (theme) => {
         localStorage.setItem(THEME_KEY, theme);
-        updateThemeButtons(theme);
+        updateThemeUI(theme);
 
         if (theme === THEMES.AUTO) {
             document.documentElement.removeAttribute('data-theme');
@@ -29,24 +29,47 @@ const themeManager = (() => {
         }
     };
 
-    const updateThemeButtons = (activeTheme) => {
-        document.querySelectorAll('.theme-btn').forEach(btn => {
-            btn.classList.remove('active');
-        });
-
-        if (activeTheme === THEMES.AUTO) {
-            document.getElementById('autoTheme').classList.add('active');
-        } else if (activeTheme === THEMES.LIGHT) {
-            document.getElementById('lightTheme').classList.add('active');
-        } else if (activeTheme === THEMES.DARK) {
-            document.getElementById('darkTheme').classList.add('active');
+    const updateThemeUI = (activeTheme) => {
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        if (themeToggleBtn) {
+            themeToggleBtn.textContent = activeTheme.charAt(0).toUpperCase() + activeTheme.slice(1);
         }
+
+        const themeOptions = document.querySelectorAll('.theme-option');
+        themeOptions.forEach(option => {
+            option.classList.remove('active');
+            if (option.getAttribute('data-theme') === activeTheme) {
+                option.classList.add('active');
+            }
+        });
     };
 
     const attachEventListeners = () => {
-        document.getElementById('autoTheme')?.addEventListener('click', () => setTheme(THEMES.AUTO));
-        document.getElementById('lightTheme')?.addEventListener('click', () => setTheme(THEMES.LIGHT));
-        document.getElementById('darkTheme')?.addEventListener('click', () => setTheme(THEMES.DARK));
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const themeMenu = document.getElementById('themeMenu');
+        const themeOptions = document.querySelectorAll('.theme-option');
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                themeMenu.classList.toggle('active');
+            });
+        }
+
+        themeOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                const selectedTheme = option.getAttribute('data-theme');
+                setTheme(selectedTheme);
+                themeMenu.classList.remove('active');
+            });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            const themeDropdown = document.querySelector('.theme-dropdown');
+            if (themeDropdown && !themeDropdown.contains(e.target)) {
+                themeMenu.classList.remove('active');
+            }
+        });
     };
 
     return { init, setTheme };
