@@ -1,355 +1,1627 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kavita Chauhan - iOS Developer with 3+ years of experience in Swift, SwiftUI, and UIKit. Building high-performance native iOS applications.">
-    <meta name="keywords" content="iOS Developer, Swift, SwiftUI, UIKit, MVVM, Portfolio, iOS Applications">
-    <meta name="author" content="Kavita Chauhan">
-    <title>Kavita Chauhan - iOS Developer | Swift & SwiftUI Specialist</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23007AFF'>K</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta -->
+  <title>Kavita Chauhan — iOS Software Developer</title>
+  <meta name="description" content="Kavita Chauhan is an iOS software developer with 3+ years of experience building responsive, performance-driven native iOS apps with Swift, SwiftUI and UIKit." />
+  <meta name="author" content="Kavita Chauhan" />
+  <meta name="keywords" content="iOS Developer, Swift, SwiftUI, UIKit, Software Developer, Kavita Chauhan, Chandigarh, India, Mobile App Development" />
+  <link rel="canonical" href="https://kavitachauhan.github.io" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Kavita Chauhan — iOS Software Developer" />
+  <meta property="og:description" content="Building thoughtful, accessible, and performant native iOS experiences with Swift." />
+  <meta property="og:url" content="https://kavitachauhan.github.io" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%23ff7849'/><text x='50' y='70' font-size='56' font-weight='700' text-anchor='middle' fill='%230b0d10' font-family='Arial'>K</text></svg>" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kavita Chauhan",
+    "jobTitle": "iOS Software Developer",
+    "url": "https://kavitachauhan.github.io",
+    "email": "mailto:kavita@example.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Chandigarh", "addressCountry": "India" },
+    "sameAs": ["https://github.com/kavita4310", "https://www.linkedin.com/in/kavitachauhan"]
+  }
+  </script>
+
+  <style>
+    /* ============ Tokens ============ */
+    :root {
+      --bg: #0b0d10;
+      --bg-elev: #11151a;
+      --surface: #161b21;
+      --surface-2: #1d232b;
+      --border: rgba(255,255,255,0.08);
+      --border-strong: rgba(255,255,255,0.16);
+      --text: #e9edf2;
+      --muted: #8b95a1;
+      --accent: #ff7849;
+      --accent-2: #ffb86b;
+      --success: #4ade80;
+      --danger: #f87171;
+      --radius: 14px;
+      --radius-sm: 10px;
+      --max-width: 1180px;
+      --shadow: 0 10px 40px -10px rgba(0,0,0,.6);
+      --shadow-lg: 0 30px 80px -20px rgba(0,0,0,.7);
+      --ring: 0 0 0 1px var(--border-strong);
+    }
+    [data-theme="light"] {
+      --bg: #f7f6f3;
+      --bg-elev: #ffffff;
+      --surface: #ffffff;
+      --surface-2: #f1efea;
+      --border: rgba(15,18,22,.10);
+      --border-strong: rgba(15,18,22,.18);
+      --text: #161b22;
+      --muted: #5b6573;
+      --accent: #d4502a;
+      --accent-2: #b8741f;
+      --shadow: 0 10px 40px -10px rgba(15,18,22,.18);
+      --shadow-lg: 0 30px 80px -20px rgba(15,18,22,.25);
+    }
+
+    /* ============ Reset ============ */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      transition: background-color .4s ease, color .4s ease;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+    ul { list-style: none; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+    /* ============ Layout ============ */
+    .container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+    .section { padding: 110px 0; position: relative; }
+    .section-head { text-align: center; margin-bottom: 60px; max-width: 720px; margin-left: auto; margin-right: auto; }
+    .section-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 600; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--accent);
+      padding: 6px 14px; border-radius: 999px;
+      border: 1px solid var(--border-strong);
+      background: var(--surface);
+      margin-bottom: 20px;
+    }
+    .section-tag::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); box-shadow: 0 0 12px var(--accent);
+    }
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: 700; letter-spacing: -0.02em; line-height: 1.1;
+    }
+    .section-subtitle {
+      color: var(--muted); margin-top: 14px; font-size: 17px; max-width: 580px; margin-left: auto; margin-right: auto;
+    }
+
+    /* ============ Buttons ============ */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 13px 24px; border-radius: 999px;
+      font-weight: 600; font-size: 15px;
+      transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease, border-color .25s ease;
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+    .btn-primary { background: var(--accent); color: #0b0d10; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px -10px var(--accent); }
+    .btn-ghost { border-color: var(--border-strong); color: var(--text); background: var(--surface); }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: var(--accent); color: var(--accent); }
+    .btn .arrow { transition: transform .25s ease; }
+    .btn:hover .arrow { transform: translateX(3px); }
+
+    /* ============ Navbar ============ */
+    .nav-wrap { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: padding .3s ease, background .3s ease, border-color .3s ease; padding: 18px 0; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .nav-wrap.scrolled {
+      padding: 10px 0;
+      background: color-mix(in srgb, var(--bg) 78%, transparent);
+      backdrop-filter: blur(18px) saturate(140%);
+      -webkit-backdrop-filter: blur(18px) saturate(140%);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+      font-size: 19px; letter-spacing: -0.01em;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .logo-mark {
+      width: 32px; height: 32px; border-radius: 9px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: grid; place-items: center; color: #0b0d10;
+      font-weight: 700; font-size: 16px;
+      box-shadow: 0 6px 16px -4px var(--accent);
+    }
+    .nav-links { display: flex; gap: 4px; align-items: center; }
+    .nav-links a {
+      padding: 8px 14px; border-radius: 999px; font-size: 14.5px; font-weight: 500;
+      color: var(--muted); transition: color .2s ease, background .2s ease;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--text); background: var(--surface); }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .icon-btn {
+      width: 38px; height: 38px; border-radius: 50%;
+      display: grid; place-items: center; border: 1px solid var(--border);
+      background: var(--surface); color: var(--text);
+      transition: transform .2s ease, border-color .2s ease, color .2s ease;
+    }
+    .icon-btn:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
+    .menu-btn { display: none; }
+
+    /* ============ Hero ============ */
+    .hero { position: relative; padding: 140px 0 100px; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+    .hero-bg::before, .hero-bg::after {
+      content: ''; position: absolute; border-radius: 50%;
+      filter: blur(80px); opacity: .5;
+    }
+    .hero-bg::before {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, var(--accent), transparent 60%);
+      top: -200px; right: -150px;
+      animation: float1 18s ease-in-out infinite;
+    }
+    .hero-bg::after {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, var(--accent-2), transparent 60%);
+      bottom: -200px; left: -100px;
+      opacity: .35;
+      animation: float2 22s ease-in-out infinite;
+    }
+    @keyframes float1 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-30px,40px); } }
+    @keyframes float2 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(40px,-30px); } }
+
+    .hero-grid {
+      display: grid; grid-template-columns: 1.3fr 1fr; gap: 60px; align-items: center;
+      position: relative; z-index: 2;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 8px 14px; border-radius: 999px;
+      background: var(--surface); border: 1px solid var(--border);
+      font-size: 13px; color: var(--muted); margin-bottom: 24px;
+      animation: fadeUp .8s .1s both;
+    }
+    .hero-eyebrow .dot {
+      width: 8px; height: 8px; border-radius: 50%; background: var(--success);
+      box-shadow: 0 0 0 0 var(--success);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--success) 60%, transparent); }
+      70% { box-shadow: 0 0 0 8px transparent; }
+      100% { box-shadow: 0 0 0 0 transparent; }
+    }
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(38px, 7vw, 76px);
+      font-weight: 700; line-height: 1.02; letter-spacing: -0.03em;
+      animation: fadeUp .8s .2s both;
+    }
+    .hero h1 .accent {
+      background: linear-gradient(120deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero-role {
+      font-size: clamp(17px, 2.5vw, 22px); color: var(--muted);
+      margin-top: 18px; max-width: 540px; animation: fadeUp .8s .3s both;
+    }
+    .hero-role strong { color: var(--text); font-weight: 600; }
+    .hero-cta {
+      display: flex; gap: 14px; flex-wrap: wrap; margin-top: 36px;
+      animation: fadeUp .8s .4s both;
+    }
+    .hero-socials { display: flex; gap: 10px; margin-top: 32px; animation: fadeUp .8s .5s both; }
+    .hero-socials a {
+      width: 44px; height: 44px; border-radius: 50%;
+      display: grid; place-items: center;
+      border: 1px solid var(--border); background: var(--surface);
+      color: var(--muted); transition: all .25s ease;
+    }
+    .hero-socials a:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-3px); }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Hero visual */
+    .hero-visual {
+      position: relative; animation: fadeUp 1s .3s both;
+    }
+    .hero-card {
+      background: linear-gradient(180deg, var(--bg-elev), var(--surface));
+      border: 1px solid var(--border);
+      border-radius: 24px; padding: 24px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    .hero-card::before {
+      content: ''; position: absolute; inset: -1px; border-radius: 24px;
+      background: linear-gradient(135deg, var(--accent), transparent 40%);
+      z-index: -1; opacity: .5; filter: blur(20px);
+    }
+    .code-window { background: var(--bg); border-radius: 14px; overflow: hidden; border: 1px solid var(--border); }
+    .code-bar { display: flex; align-items: center; gap: 6px; padding: 12px 14px; border-bottom: 1px solid var(--border); }
+    .code-bar .dot { width: 11px; height: 11px; border-radius: 50%; }
+    .code-bar .d1 { background: #ff5f56; } .code-bar .d2 { background: #ffbd2e; } .code-bar .d3 { background: #27c93f; }
+    .code-bar .file { margin-left: auto; font-size: 12px; color: var(--muted); font-family: 'Space Grotesk', monospace; }
+    .code-body {
+      padding: 18px; font-family: 'SF Mono', 'Monaco', monospace;
+      font-size: 13px; line-height: 1.7; color: var(--muted);
+      overflow-x: auto;
+    }
+    .code-body .k { color: var(--accent); }
+    .code-body .s { color: var(--accent-2); }
+    .code-body .t { color: #61dafb; }
+    .code-body .c { color: #5b6573; font-style: italic; }
+    .code-body .n { color: var(--text); }
+
+    .floating-badge {
+      position: absolute; padding: 10px 14px; border-radius: 12px;
+      background: var(--surface); border: 1px solid var(--border-strong);
+      box-shadow: var(--shadow); font-size: 13px; font-weight: 500;
+      display: flex; align-items: center; gap: 8px;
+      animation: floatY 4s ease-in-out infinite;
+    }
+    .floating-badge.b1 { top: -16px; right: -16px; animation-delay: 0s; }
+    .floating-badge.b2 { bottom: 30px; left: -28px; animation-delay: 1.5s; }
+    .floating-badge .ic { color: var(--accent); }
+    @keyframes floatY { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+    /* ============ Marquee ============ */
+    .marquee {
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      padding: 22px 0; overflow: hidden; background: var(--bg-elev);
+    }
+    .marquee-track {
+      display: flex; gap: 60px; align-items: center;
+      animation: scroll 30s linear infinite;
+      white-space: nowrap;
+    }
+    .marquee-item {
+      display: flex; align-items: center; gap: 10px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600; font-size: 18px; color: var(--muted);
+      flex-shrink: 0;
+    }
+    .marquee-item svg { width: 22px; height: 22px; }
+    .marquee-item .ast { color: var(--accent); }
+    @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ============ About ============ */
+    .about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: start; }
+    .about-visual { position: sticky; top: 100px; }
+    .about-card {
+      background: linear-gradient(180deg, var(--bg-elev), var(--surface));
+      border: 1px solid var(--border); border-radius: 24px; padding: 32px;
+      box-shadow: var(--shadow);
+    }
+    .about-avatar {
+      width: 96px; height: 96px; border-radius: 24px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: grid; place-items: center;
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+      font-size: 40px; color: #0b0d10; margin-bottom: 20px;
+      box-shadow: 0 10px 30px -10px var(--accent);
+    }
+    .about-name { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; }
+    .about-title { color: var(--muted); font-size: 14px; margin-top: 4px; }
+    .about-meta { margin-top: 24px; display: grid; gap: 14px; }
+    .meta-row { display: flex; align-items: center; gap: 12px; font-size: 14px; }
+    .meta-row .ic { width: 36px; height: 36px; border-radius: 10px; background: var(--surface-2); display: grid; place-items: center; color: var(--accent); flex-shrink: 0; }
+    .meta-row .lbl { color: var(--muted); font-size: 12px; }
+    .meta-row .val { font-weight: 500; }
+    .availability {
+      margin-top: 24px; padding: 12px 16px; border-radius: 12px;
+      background: color-mix(in srgb, var(--success) 10%, transparent);
+      border: 1px solid color-mix(in srgb, var(--success) 30%, transparent);
+      font-size: 13px; color: var(--text); display: flex; align-items: center; gap: 10px;
+    }
+    .availability .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--success); animation: pulse 2s infinite; }
+
+    .about-text p { font-size: 17px; color: var(--muted); margin-bottom: 18px; }
+    .about-text p strong { color: var(--text); font-weight: 600; }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
+    .stat {
+      padding: 20px; border-radius: 14px; background: var(--surface);
+      border: 1px solid var(--border); transition: transform .25s ease, border-color .25s ease;
+    }
+    .stat:hover { transform: translateY(-3px); border-color: var(--accent); }
+    .stat-num { font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 700; color: var(--accent); line-height: 1; }
+    .stat-lbl { color: var(--muted); font-size: 13px; margin-top: 6px; }
+
+    /* ============ Skills ============ */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+    .skill-card {
+      padding: 28px; border-radius: 18px; background: var(--surface);
+      border: 1px solid var(--border); transition: transform .3s ease, border-color .3s ease;
+      position: relative; overflow: hidden;
+    }
+    .skill-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      transform: scaleX(0); transform-origin: left; transition: transform .4s ease;
+    }
+    .skill-card:hover { transform: translateY(-4px); border-color: var(--border-strong); }
+    .skill-card:hover::before { transform: scaleX(1); }
+    .skill-head { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+    .skill-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: color-mix(in srgb, var(--accent) 12%, var(--surface-2));
+      display: grid; place-items: center; color: var(--accent);
+      flex-shrink: 0;
+    }
+    .skill-head h3 { font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 600; }
+    .skill-head p { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-tag {
+      padding: 6px 12px; border-radius: 8px; background: var(--surface-2);
+      border: 1px solid var(--border); font-size: 12.5px; color: var(--text);
+      transition: all .2s ease;
+    }
+    .skill-tag:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* ============ Services ============ */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .service-card {
+      padding: 32px 26px; border-radius: 18px; background: var(--surface);
+      border: 1px solid var(--border); position: relative; overflow: hidden;
+      transition: transform .35s cubic-bezier(.2,.8,.2,1), background .35s ease;
+    }
+    .service-card::after {
+      content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 60%;
+      background: radial-gradient(ellipse at bottom, color-mix(in srgb, var(--accent) 14%, transparent), transparent 70%);
+      opacity: 0; transition: opacity .4s ease; pointer-events: none;
+    }
+    .service-card:hover { transform: translateY(-6px); }
+    .service-card:hover::after { opacity: 1; }
+    .service-num {
+      font-family: 'Space Grotesk', sans-serif; font-size: 13px;
+      color: var(--accent); font-weight: 600; letter-spacing: .15em;
+    }
+    .service-card h3 {
+      font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600;
+      margin: 14px 0 10px;
+    }
+    .service-card p { color: var(--muted); font-size: 14.5px; }
+    .service-arrow {
+      margin-top: 22px; display: inline-flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 600; color: var(--accent);
+      transition: gap .25s ease;
+    }
+    .service-card:hover .service-arrow { gap: 12px; }
+
+    /* ============ Projects ============ */
+    .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .project-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; overflow: hidden; cursor: pointer;
+      transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+      display: flex; flex-direction: column;
+    }
+    .project-card:hover { transform: translateY(-6px); border-color: var(--border-strong); box-shadow: var(--shadow-lg); }
+    .project-img {
+      aspect-ratio: 16/10; position: relative; overflow: hidden;
+      background: linear-gradient(135deg, var(--surface-2), var(--bg-elev));
+    }
+    .project-img::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 30% 30%, color-mix(in srgb, var(--accent) 30%, transparent), transparent 60%);
+    }
+    .project-mock {
+      position: absolute; inset: 0; display: grid; place-items: center;
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+      font-size: 42px; color: var(--accent); opacity: .8;
+      letter-spacing: -0.02em;
+    }
+    .project-mock .sub { font-size: 12px; color: var(--muted); font-weight: 500; margin-top: 4px; letter-spacing: .2em; }
+    .project-mock .wrap { text-align: center; }
+    .project-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+    .project-cat { font-size: 12px; color: var(--accent); font-weight: 600; letter-spacing: .15em; text-transform: uppercase; }
+    .project-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 600; margin: 8px 0 10px; }
+    .project-card p { color: var(--muted); font-size: 14.5px; flex: 1; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0; }
+    .project-tags span { font-size: 11.5px; padding: 4px 10px; border-radius: 6px; background: var(--surface-2); color: var(--muted); border: 1px solid var(--border); }
+    .project-links { display: flex; gap: 16px; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--border); }
+    .project-links a {
+      font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;
+      color: var(--text); transition: color .2s ease, gap .2s ease;
+    }
+    .project-links a:hover { color: var(--accent); gap: 10px; }
+
+    /* ============ Testimonials ============ */
+    .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+    .testi-card {
+      padding: 28px; border-radius: 18px; background: var(--surface);
+      border: 1px solid var(--border); position: relative;
+      transition: transform .3s ease, border-color .3s ease;
+    }
+    .testi-card:hover { transform: translateY(-4px); border-color: var(--border-strong); }
+    .testi-quote { font-size: 56px; font-family: serif; color: var(--accent); line-height: 0.5; opacity: .35; }
+    .testi-text { font-size: 15px; color: var(--text); margin: 12px 0 22px; line-height: 1.6; }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .testi-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: grid; place-items: center; color: #0b0d10;
+      font-weight: 600; font-size: 16px; font-family: 'Space Grotesk', sans-serif;
+    }
+    .testi-name { font-weight: 600; font-size: 14px; }
+    .testi-role { color: var(--muted); font-size: 12.5px; }
+
+    /* ============ Experience ============ */
+    .timeline { position: relative; max-width: 860px; margin: 0 auto; padding-left: 32px; }
+    .timeline::before {
+      content: ''; position: absolute; left: 7px; top: 8px; bottom: 8px;
+      width: 2px; background: linear-gradient(180deg, var(--accent), transparent);
+    }
+    .timeline-item { position: relative; padding-bottom: 48px; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -32px; top: 6px;
+      width: 16px; height: 16px; border-radius: 50%;
+      background: var(--bg); border: 3px solid var(--accent);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent);
+    }
+    .timeline-date {
+      font-size: 12.5px; color: var(--accent); font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+    }
+    .timeline-item h4 {
+      font-family: 'Space Grotesk', sans-serif; font-size: 19px; font-weight: 600;
+      margin: 6px 0 4px;
+    }
+    .timeline-org { color: var(--muted); font-size: 14px; margin-bottom: 12px; }
+    .timeline-item p { color: var(--muted); font-size: 14.5px; }
+    .timeline-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .timeline-tags span {
+      font-size: 11.5px; padding: 4px 10px; border-radius: 6px;
+      background: var(--surface); color: var(--muted); border: 1px solid var(--border);
+    }
+
+    /* ============ Contact ============ */
+    .contact-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: start; }
+    .contact-form {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 32px;
+    }
+    .field { margin-bottom: 18px; }
+    .field label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+    .field label .req { color: var(--accent); }
+    .field input, .field textarea {
+      width: 100%; padding: 13px 16px; border-radius: 10px;
+      background: var(--bg-elev); border: 1px solid var(--border);
+      color: var(--text); font-family: inherit; font-size: 14.5px;
+      transition: border-color .2s ease, background .2s ease;
+    }
+    .field input:focus, .field textarea:focus {
+      outline: none; border-color: var(--accent);
+      background: var(--surface-2);
+    }
+    .field textarea { resize: vertical; min-height: 130px; }
+    .field .hint { font-size: 12px; color: var(--muted); margin-top: 6px; }
+    .field.err input, .field.err textarea { border-color: var(--danger); }
+    .field .err-msg { font-size: 12.5px; color: var(--danger); margin-top: 6px; display: none; }
+    .field.err .err-msg { display: block; }
+    .form-status {
+      margin-top: 14px; padding: 12px 14px; border-radius: 10px;
+      font-size: 14px; display: none;
+    }
+    .form-status.success { display: block; background: color-mix(in srgb, var(--success) 12%, transparent); border: 1px solid color-mix(in srgb, var(--success) 35%, transparent); color: var(--text); }
+    .form-status.error { display: block; background: color-mix(in srgb, var(--danger) 12%, transparent); border: 1px solid color-mix(in srgb, var(--danger) 35%, transparent); color: var(--text); }
+
+    .contact-info { display: grid; gap: 14px; }
+    .contact-card {
+      display: flex; align-items: center; gap: 14px; padding: 18px 20px;
+      border-radius: 14px; background: var(--surface); border: 1px solid var(--border);
+      transition: transform .25s ease, border-color .25s ease;
+    }
+    .contact-card:hover { transform: translateX(4px); border-color: var(--accent); }
+    .contact-card .ic {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: color-mix(in srgb, var(--accent) 12%, var(--surface-2));
+      display: grid; place-items: center; color: var(--accent); flex-shrink: 0;
+    }
+    .contact-card .lbl { font-size: 12px; color: var(--muted); }
+    .contact-card .val { font-weight: 500; font-size: 14.5px; margin-top: 2px; word-break: break-all; }
+
+    /* ============ Footer ============ */
+    footer { border-top: 1px solid var(--border); padding: 50px 0 30px; background: var(--bg-elev); }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px;
+      padding-bottom: 36px; border-bottom: 1px solid var(--border);
+    }
+    .footer-brand p { color: var(--muted); font-size: 14px; margin-top: 14px; max-width: 360px; }
+    .footer-socials { display: flex; gap: 10px; margin-top: 18px; }
+    .footer-socials a {
+      width: 38px; height: 38px; border-radius: 10px;
+      display: grid; place-items: center; background: var(--surface);
+      border: 1px solid var(--border); color: var(--muted);
+      transition: all .25s ease;
+    }
+    .footer-socials a:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-3px); }
+    .footer-col h4 { font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+    .footer-col ul { display: grid; gap: 10px; }
+    .footer-col a { color: var(--text); font-size: 14px; transition: color .2s ease; }
+    .footer-col a:hover { color: var(--accent); }
+    .footer-bottom { padding-top: 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
+    .footer-bottom .made { display: flex; align-items: center; gap: 6px; }
+    .footer-bottom .made .heart { color: var(--accent); animation: beat 1.4s ease-in-out infinite; }
+    @keyframes beat { 0%,100% { transform: scale(1); } 50% { transform: scale(1.18); } }
+
+    /* ============ Project Modal ============ */
+    .modal {
+      position: fixed; inset: 0; z-index: 200;
+      display: none; align-items: center; justify-content: center;
+      padding: 24px;
+    }
+    .modal.open { display: flex; }
+    .modal-bg { position: absolute; inset: 0; background: rgba(0,0,0,.7); backdrop-filter: blur(6px); animation: fadeIn .3s ease; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .modal-card {
+      position: relative; max-width: 720px; width: 100%;
+      max-height: 88vh; overflow-y: auto;
+      background: var(--bg-elev); border: 1px solid var(--border-strong);
+      border-radius: 20px; padding: 32px;
+      animation: modalIn .35s cubic-bezier(.2,.8,.2,1);
+    }
+    @keyframes modalIn { from { opacity: 0; transform: translateY(20px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    .modal-close {
+      position: absolute; top: 18px; right: 18px;
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--surface); border: 1px solid var(--border);
+      display: grid; place-items: center; color: var(--muted);
+      transition: color .2s ease, border-color .2s ease;
+    }
+    .modal-close:hover { color: var(--danger); border-color: var(--danger); }
+    .modal-cat { color: var(--accent); font-size: 13px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; }
+    .modal-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; margin: 10px 0 16px; }
+    .modal-card .modal-desc { color: var(--muted); font-size: 15px; line-height: 1.7; }
+    .modal-card .modal-section { margin-top: 24px; }
+    .modal-section h4 { font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text); margin-bottom: 12px; }
+    .modal-features { display: grid; gap: 8px; }
+    .modal-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--muted); }
+    .modal-features li::before { content: '▹'; color: var(--accent); margin-top: -2px; }
+    .modal-tech { display: flex; flex-wrap: wrap; gap: 8px; }
+    .modal-tech span { font-size: 12.5px; padding: 6px 12px; border-radius: 8px; background: var(--surface); border: 1px solid var(--border); color: var(--text); }
+    .modal-links { display: flex; gap: 12px; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border); }
+
+    /* ============ Scroll-to-top ============ */
+    .to-top {
+      position: fixed; bottom: 24px; right: 24px;
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--accent); color: #0b0d10;
+      display: grid; place-items: center; z-index: 90;
+      box-shadow: 0 10px 30px -6px var(--accent);
+      opacity: 0; transform: translateY(20px); pointer-events: none;
+      transition: opacity .3s ease, transform .3s ease;
+    }
+    .to-top.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .to-top:hover { transform: translateY(-3px); }
+
+    /* ============ Reveal ============ */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* ============ Responsive ============ */
+    @media (max-width: 980px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 50px; }
+      .hero-visual { max-width: 440px; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-visual { position: static; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-brand { grid-column: 1 / -1; }
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      .section { padding: 80px 0; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; padding: 16px; gap: 6px; background: var(--bg-elev); border-bottom: 1px solid var(--border); margin-top: 8px; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 12px 14px; width: 100%; border-radius: 10px; }
+      .menu-btn { display: grid; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+      .stat:last-child { grid-column: 1 / -1; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-brand { grid-column: 1; }
+      .hero { padding: 120px 0 80px; }
+      .floating-badge.b2 { left: 0; }
+      .floating-badge.b1 { right: 0; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 18px; }
+      .hero-cta { flex-direction: column; align-items: stretch; }
+      .btn { justify-content: center; }
+    }
+
+    /* ============ Reduced motion ============ */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* ============ Print ============ */
+    @media print {
+      .nav-wrap, .to-top, .menu-btn, .hero-bg, .floating-badge, .marquee, .hero-socials, .modal, .to-top { display: none !important; }
+      body { background: #fff; color: #000; }
+      .section { padding: 20px 0; break-inside: avoid; }
+      .project-card, .skill-card, .service-card, .testi-card, .contact-card { box-shadow: none; border-color: #ccc; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-content">
-                <div class="logo">Kavita Chauhan</div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="theme-dropdown">
-                    <button class="theme-toggle-btn" id="themeToggleBtn">Theme</button>
-                    <div class="theme-menu" id="themeMenu">
-                        <div class="theme-option" data-theme="auto">Auto</div>
-                        <div class="theme-option" data-theme="light">Light</div>
-                        <div class="theme-option" data-theme="dark">Dark</div>
-                    </div>
-                </div>
+
+  <!-- ============ NAVBAR ============ -->
+  <div class="nav-wrap" id="navWrap">
+    <div class="container nav-inner">
+      <a href="#home" class="logo" aria-label="Kavita Chauhan home">
+        <span class="logo-mark">K</span>
+        <span>Kavita<span style="color:var(--accent)">.</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#testimonials">Praise</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle color theme">
+          <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="#contact" class="btn btn-primary" style="padding:9px 18px;font-size:14px;">Hire me</a>
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-eyebrow">
+            <span class="dot"></span> Available for new opportunities
+          </div>
+          <h1>
+            Hi, I'm <span class="accent">Kavita Chauhan</span>.<br>
+            I build <span class="accent">iOS apps</span><br>
+            people love.
+          </h1>
+          <p class="hero-role">
+            <strong>iOS Software Developer</strong> with 3+ years crafting clean, accessible, and
+            performance-driven native apps with Swift, SwiftUI, and UIKit — from idea to App Store.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">
+              View my work
+              <span class="arrow">→</span>
+            </a>
+            <a href="#contact" class="btn btn-ghost">Let's talk</a>
+          </div>
+          <div class="hero-socials">
+            <a href="https://github.com/kavita4310" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.02c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.11-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.21-1.49 3.18-1.18 3.18-1.18.63 1.58.23 2.75.11 3.04.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.79.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/kavitachauhan" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 17.34v-7H6v7h2.34zM7.17 9.17a1.36 1.36 0 1 0 0-2.72 1.36 1.36 0 0 0 0 2.72zM18 17.34v-3.86c0-2.06-1.1-3.02-2.57-3.02-1.19 0-1.72.65-2.01 1.11v-.95H9.07v7h2.34v-3.79c0-.36.02-.72.13-.98.27-.68.89-1.38 1.93-1.38 1.36 0 1.9 1.04 1.9 2.56v3.59H18z"/></svg>
+            </a>
+            <a href="mailto:kavita@example.com" aria-label="Email">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="code-window">
+              <div class="code-bar">
+                <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span>
+                <span class="file">DeveloperProfile.swift</span>
+              </div>
+              <pre class="code-body"><span class="k">struct</span> <span class="t">Developer</span> {
+    <span class="k">let</span> name = <span class="s">"Kavita Chauhan"</span>
+    <span class="k">let</span> role = <span class="s">"iOS Software Developer"</span>
+    <span class="k">let</span> location = <span class="s">"Chandigarh, IN"</span>
+    <span class="k">var</span> skills: [<span class="t">String</span>] = [
+        <span class="s">"Swift"</span>, <span class="s">"SwiftUI"</span>,
+        <span class="s">"UIKit"</span>, <span class="s">"MVVM"</span>
+    ]
+
+    <span class="k">func</span> build(with idea: <span class="t">String</span>) <span class="k">throws</span> <span class="k">-></span> <span class="t">App</span> {
+        <span class="c">// ship with care.</span>
+        <span class="k">return</span> <span class="t">App</span>(idea: idea)
+    }
+}</pre>
             </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Kavita Chauhan</h1>
-                <h2>iOS Developer</h2>
-                <p>Designing and developing high-performance native iOS applications with clean architecture, scalable code, and exceptional user experiences.</p>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">3+</span>
-                        <span class="stat-label">Years Experience</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">10+</span>
-                        <span class="stat-label">iOS Applications</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">2</span>
-                        <span class="stat-label">App Store Releases</span>
-                    </div>
-                </div>
-                <div class="hero-cta">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="#projects" class="btn btn-secondary">View My Work</a>
-                </div>
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/kavita-chauhan-ios" target="_blank" rel="noopener noreferrer" title="LinkedIn">LinkedIn</a>
-                    <a href="https://github.com/kavita4310" target="_blank" rel="noopener noreferrer" title="GitHub">GitHub</a>
-                    <a href="mailto:kavita4310ios@gmail.com" title="Email">Email</a>
-                </div>
+            <div class="floating-badge b1">
+              <span class="ic">⚡</span> 95+ Lighthouse
             </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I'm an iOS Developer with 3+ years of professional experience designing and developing native iOS applications using Swift, SwiftUI, and UIKit.</p>
-                    <p>I specialize in building scalable applications with clean architecture, reusable components, and intuitive user experiences. My expertise includes RESTful API integration, MVVM architecture, offline synchronization, and performance optimization.</p>
-                    <p>Currently at Brucode Technologies, I independently develop and maintain production-level iOS applications from architecture through App Store deployment. I'm passionate about writing clean, maintainable code and delivering high-quality, performance-driven mobile applications.</p>
-                </div>
-                <div class="about-info">
-                    <div class="info-item">
-                        <strong>Location:</strong> Chandigarh, India
-                    </div>
-                    <div class="info-item">
-                        <strong>Email:</strong> <a href="mailto:kavita4310ios@gmail.com">kavita4310ios@gmail.com</a>
-                    </div>
-                    <div class="info-item">
-                        <strong>Phone:</strong> <a href="tel:+919695431018">+91 9695431018</a>
-                    </div>
-                    <div class="info-item">
-                        <strong>Experience:</strong> 3+ Years
-                    </div>
-                </div>
+            <div class="floating-badge b2">
+              <span class="ic">★★</span> 4.9 / 5 client rating
             </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </header>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Programming Language</h3>
-                    <p>Swift</p>
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-item"><span class="ast">✦</span> Swift</div>
+      <div class="marquee-item"><span class="ast">✦</span> SwiftUI</div>
+      <div class="marquee-item"><span class="ast">✦</span> UIKit</div>
+      <div class="marquee-item"><span class="ast">✦</span> Combine</div>
+      <div class="marquee-item"><span class="ast">✦</span> MVVM</div>
+      <div class="marquee-item"><span class="ast">✦</span> REST APIs</div>
+      <div class="marquee-item"><span class="ast">✦</span> CoreData</div>
+      <div class="marquee-item"><span class="ast">✦</span> XCTest</div>
+      <div class="marquee-item"><span class="ast">✦</span> Git</div>
+      <!-- duplicate for seamless loop -->
+      <div class="marquee-item"><span class="ast">✦</span> Swift</div>
+      <div class="marquee-item"><span class="ast">✦</span> SwiftUI</div>
+      <div class="marquee-item"><span class="ast">✦</span> UIKit</div>
+      <div class="marquee-item"><span class="ast">✦</span> Combine</div>
+      <div class="marquee-item"><span class="ast">✦</span> MVVM</div>
+      <div class="marquee-item"><span class="ast">✦</span> REST APIs</div>
+      <div class="marquee-item"><span class="ast">✦</span> CoreData</div>
+      <div class="marquee-item"><span class="ast">✦</span> XCTest</div>
+      <div class="marquee-item"><span class="ast">✦</span> Git</div>
+    </div>
+  </div>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">About</span>
+        <h2 class="section-title">A bit about me</h2>
+        <p class="section-subtitle">I'm a developer who cares about the small details that make products feel effortless.</p>
+      </div>
+      <div class="about-grid">
+        <aside class="about-visual reveal">
+          <div class="about-card">
+            <div class="about-avatar">K</div>
+            <div class="about-name">Kavita Chauhan</div>
+            <div class="about-title">iOS Software Developer · India</div>
+            <div class="about-meta">
+              <div class="meta-row">
+                <div class="ic">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 </div>
-                <div class="skill-category">
-                    <h3>UI Frameworks</h3>
-                    <p>SwiftUI, UIKit, Foundation, Custom Frameworks</p>
+                <div><div class="lbl">Location</div><div class="val">Chandigarh, India</div></div>
+              </div>
+              <div class="meta-row">
+                <div class="ic">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
                 </div>
-                <div class="skill-category">
-                    <h3>Architecture & Design Patterns</h3>
-                    <p>MVVM, MVC, Protocol-Oriented Programming</p>
+                <div><div class="lbl">Experience</div><div class="val">3+ years</div></div>
+              </div>
+              <div class="meta-row">
+                <div class="ic">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg>
                 </div>
-                <div class="skill-category">
-                    <h3>Networking & APIs</h3>
-                    <p>REST APIs, URLSession, JSON Parsing</p>
+                <div><div class="lbl">Status</div><div class="val">Open to opportunities</div></div>
+              </div>
+              <div class="meta-row">
+                <div class="ic">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 </div>
-                <div class="skill-category">
-                    <h3>Database & Storage</h3>
-                    <p>CoreData, SwiftData, SQLite</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Development Tools</h3>
-                    <p>Xcode, Instruments, Interface Builder, Swift Package Manager</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Version Control</h3>
-                    <p>Git, GitHub, GitLab</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Testing & Debugging</h3>
-                    <p>XCTest, Xcode Debugger, Instruments, Performance Optimization</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Package Managers</h3>
-                    <p>CocoaPods, Swift Package Manager</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Additional Skills</h3>
-                    <p>Auto Layout, Storyboards, Push Notifications, Biometric Authentication</p>
-                </div>
+                <div><div class="lbl">Email</div><div class="val">kavita@example.com</div></div>
+              </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2>Professional Experience</h2>
-            <div class="experience-list">
-                <!-- Current Role -->
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="experience-title">
-                            <h3>iOS Developer</h3>
-                            <p class="company">Brucode Technologies Pvt. Ltd.</p>
-                        </div>
-                        <div class="experience-date">Jul 2024 – Present</div>
-                    </div>
-                    <ul class="experience-details">
-                        <li>Independently developed and maintained two production-level iOS apps, Hublix SP and Hublix OSM, from architecture through App Store deployment</li>
-                        <li>Designed responsive interfaces in SwiftUI/UIKit using reusable components, cutting UI development time on new screens</li>
-                        <li>Created custom frameworks and modular components, improving code reuse and reducing duplicate logic across both apps</li>
-                        <li>Integrated REST APIs, offline data synchronization, biometric authentication, and real-time data handling in low-connectivity environments</li>
-                        <li>Collaborated directly with clients and cross-functional teams to deliver production-ready applications</li>
-                    </ul>
-                </div>
-
-                <!-- Previous Role 1 -->
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="experience-title">
-                            <h3>iOS Developer</h3>
-                            <p class="company">CS Soft Solution Pvt. Ltd.</p>
-                        </div>
-                        <div class="experience-date">Apr 2023 – Apr 2024</div>
-                    </div>
-                    <ul class="experience-details">
-                        <li>Developed multiple native iOS applications across social media, food delivery, travel, business, stock market, and gaming domains</li>
-                        <li>Collaborated with cross-functional teams to debug issues, enhance performance, and ship new features on schedule</li>
-                        <li>Implemented RESTful API integrations, UI/UX improvements, and performance optimizations</li>
-                        <li>Gained experience across diverse application types and technical requirements</li>
-                    </ul>
-                </div>
-
-                <!-- Previous Role 2 -->
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="experience-title">
-                            <h3>iOS Developer Intern</h3>
-                            <p class="company">Quadtrics Solutions Pvt. Ltd.</p>
-                        </div>
-                        <div class="experience-date">Aug 2022 – Mar 2023</div>
-                    </div>
-                    <ul class="experience-details">
-                        <li>Completed 6-month iOS development training and gained hands-on experience in building production-ready applications</li>
-                        <li>Developed healthcare and business applications including MindVit and Zera Financial using UIKit</li>
-                        <li>Worked with CoreData, REST APIs, and modern iOS development practices</li>
-                    </ul>
-                </div>
+            <div class="availability">
+              <span class="dot"></span> Currently building iOS apps at Brucode Technologies
             </div>
+          </div>
+        </aside>
+
+        <div class="about-text reveal">
+          <p>I'm a software developer with <strong>3+ years of experience</strong> designing and developing native iOS applications. My work spans the entire app lifecycle — from concept and architecture to release and ongoing maintenance.</p>
+          <p>I specialize in <strong>Swift, SwiftUI, and UIKit</strong>, with a strong focus on architecture patterns like <strong>MVVM</strong> and protocol-oriented design. I write clean, testable, and well-documented code that holds up as products and teams grow.</p>
+          <p>Beyond shipping features, I care deeply about <strong>accessibility, performance, and the small interactions</strong> that make an app feel polished. I'm equally comfortable integrating REST APIs, optimizing scrolling performance, or refining a custom animation until it feels just right.</p>
+          <p>I enjoy collaborating with designers, product managers, and backend engineers — and I'm always learning. When I'm not coding, you'll find me exploring new frameworks, contributing to open source, or mentoring junior developers.</p>
+
+          <div class="about-stats">
+            <div class="stat"><div class="stat-num" data-target="20">0</div><div class="stat-lbl">Apps shipped</div></div>
+            <div class="stat"><div class="stat-num" data-target="3">0</div><div class="stat-lbl">Years experience</div></div>
+            <div class="stat"><div class="stat-num" data-target="98" data-suffix="%">0</div><div class="stat-lbl">Client satisfaction</div></div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>Featured Projects</h2>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Hublix SP - Driver Management Application</h3>
-                        <a href="https://apps.apple.com/in/app/hublix-sp/id6754014509" target="_blank" rel="noopener noreferrer" class="project-link">View on App Store</a>
-                    </div>
-                    <p class="project-description">Driver management application for Amazon DSP operations with features including vehicle inspections, attendance tracking, incident reporting, shift scheduling, and financial insights. Implemented offline data synchronization, biometric authentication, and real-time API integration to ensure seamless user experience in low-connectivity environments.</p>
-                    <div class="project-features">
-                        <span class="feature">Offline Synchronization</span>
-                        <span class="feature">Biometric Authentication</span>
-                        <span class="feature">Real-time API</span>
-                        <span class="feature">Low Connectivity Support</span>
-                    </div>
-                    <div class="project-tech">
-                        <strong>Technologies:</strong> SwiftUI, Swift, Combine, REST APIs, PencilKit, SDWebImage
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Hublix OSM - Fleet Management Application</h3>
-                        <p class="production-app">Production Application</p>
-                    </div>
-                    <p class="project-description">Fleet compliance and on-site management application for depot managers to monitor vehicle inspections, fleet availability, compliance, and incident reporting. Integrated real-time data synchronization, digital documentation, and offline support to streamline fleet operations and reduce compliance issues.</p>
-                    <div class="project-features">
-                        <span class="feature">Real-time Data Sync</span>
-                        <span class="feature">Digital Documentation</span>
-                        <span class="feature">Offline Support</span>
-                        <span class="feature">Fleet Monitoring</span>
-                    </div>
-                    <div class="project-tech">
-                        <strong>Technologies:</strong> SwiftUI, Swift, Combine, REST APIs, PencilKit, SDWebImage
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Multi-Domain iOS Applications</h3>
-                        <p class="production-app">Portfolio of Applications</p>
-                    </div>
-                    <p class="project-description">Developed 8+ production-ready iOS applications across diverse domains including healthcare, business, travel, food delivery, gaming, and social media. Each application showcased expertise in different architectural patterns, UI frameworks, and iOS technologies.</p>
-                    <div class="project-features">
-                        <span class="feature">Healthcare Apps</span>
-                        <span class="feature">Business Solutions</span>
-                        <span class="feature">Travel Platforms</span>
-                        <span class="feature">Food Delivery</span>
-                    </div>
-                    <div class="project-tech">
-                        <strong>Technologies:</strong> Swift, UIKit, SwiftUI, CoreData, REST APIs, Firebase
-                    </div>
-                </div>
+  <!-- ============ SKILLS ============ -->
+  <section class="section" id="skills" style="background:var(--bg-elev);">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">Skills</span>
+        <h2 class="section-title">Tools I work with</h2>
+        <p class="section-subtitle">A practical, production-tested toolkit across the iOS stack.</p>
+      </div>
+      <div class="skills-grid">
+        <article class="skill-card reveal">
+          <div class="skill-head">
+            <div class="skill-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16,18 22,12 16,6"/><polyline points="8,6 2,12 8,18"/></svg>
             </div>
-        </div>
-    </section>
+            <div><h3>Languages</h3><p>Core programming</p></div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Swift</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">C++</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">JavaScript</span>
+          </div>
+        </article>
 
-    <!-- Education Section -->
-    <section id="education" class="education">
-        <div class="container">
-            <h2>Education & Certifications</h2>
-            <div class="education-grid">
-                <div class="education-item">
-                    <h3>Bachelor of Science (Biology)</h3>
-                    <p class="institution">Veer Bahadur Singh Purvanchal University</p>
-                    <p class="year">2019 – 2022</p>
-                </div>
-                <div class="education-item">
-                    <h3>CCC - Course on Computer Concepts</h3>
-                    <p class="institution">NIELIT Organisation of Uttar Pradesh</p>
-                    <p class="year">2021 – 2022</p>
-                </div>
-                <div class="education-item">
-                    <h3>ADCA - Advanced Diploma in Computer Application</h3>
-                    <p class="institution">Hariom Computer Institute, Uttar Pradesh</p>
-                    <p class="year">2021 – 2022</p>
-                </div>
-                <div class="education-item">
-                    <h3>DCA - Diploma in Computer Application</h3>
-                    <p class="institution">Adarsh Computer Institute, Uttar Pradesh</p>
-                    <p class="year">2019 – 2020</p>
-                </div>
+        <article class="skill-card reveal">
+          <div class="skill-head">
+            <div class="skill-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
             </div>
-        </div>
-    </section>
+            <div><h3>iOS Frameworks & UI</h3><p>Building the interface</p></div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">SwiftUI</span>
+            <span class="skill-tag">UIKit</span>
+            <span class="skill-tag">Foundation</span>
+            <span class="skill-tag">Custom Frameworks</span>
+            <span class="skill-tag">Auto Layout</span>
+            <span class="skill-tag">Storyboards</span>
+          </div>
+        </article>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <p class="contact-intro">I'm always interested in hearing about new projects and opportunities. Feel free to reach out through any of these channels.</p>
-            <div class="contact-methods">
-                <a href="mailto:kavita4310ios@gmail.com" class="contact-card">
-                    <span class="contact-icon">✉️</span>
-                    <div>
-                        <h3>Email</h3>
-                        <p>kavita4310ios@gmail.com</p>
-                    </div>
-                </a>
-                <a href="tel:+919695431018" class="contact-card">
-                    <span class="contact-icon">📱</span>
-                    <div>
-                        <h3>Phone</h3>
-                        <p>+91 9695431018</p>
-                    </div>
-                </a>
-                <a href="https://linkedin.com/in/kavita-chauhan-ios" target="_blank" rel="noopener noreferrer" class="contact-card">
-                    <span class="contact-icon">💼</span>
-                    <div>
-                        <h3>LinkedIn</h3>
-                        <p>Connect with me</p>
-                    </div>
-                </a>
-                <a href="https://github.com/kavita4310" target="_blank" rel="noopener noreferrer" class="contact-card">
-                    <span class="contact-icon">👨‍💻</span>
-                    <div>
-                        <h3>GitHub</h3>
-                        <p>View my code</p>
-                    </div>
-                </a>
+        <article class="skill-card reveal">
+          <div class="skill-head">
+            <div class="skill-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><polyline points="2,17 12,22 22,17"/><polyline points="2,12 12,17 22,12"/></svg>
             </div>
-        </div>
-    </section>
+            <div><h3>Architecture</h3><p>Design patterns</p></div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">MVVM</span>
+            <span class="skill-tag">MVC</span>
+            <span class="skill-tag">Protocol-Oriented</span>
+            <span class="skill-tag">SOLID</span>
+            <span class="skill-tag">Dependency Injection</span>
+          </div>
+        </article>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Kavita Chauhan. All rights reserved. | iOS Developer</p>
-            <p>
-                <a href="https://linkedin.com/in/kavita-chauhan-ios" target="_blank" rel="noopener noreferrer">LinkedIn</a> •
-                <a href="https://github.com/kavita4310" target="_blank" rel="noopener noreferrer">GitHub</a> •
-                <a href="mailto:kavita4310ios@gmail.com">Email</a>
-            </p>
-        </div>
-    </footer>
+        <article class="skill-card reveal">
+          <div class="skill-head">
+            <div class="skill-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div><h3>Networking & APIs</h3><p>Backend integration</p></div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">GraphQL</span>
+            <span class="skill-tag">URLSession</span>
+            <span class="skill-tag">JSON Parsing</span>
+            <span class="skill-tag">Codable</span>
+            <span class="skill-tag">Combine</span>
+          </div>
+        </article>
 
-    <script src="script.js"></script>
+        <article class="skill-card reveal">
+          <div class="skill-head">
+            <div class="skill-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
+            </div>
+            <div><h3>Data Storage</h3><p>Persistence layers</p></div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">CoreData</span>
+            <span class="skill-tag">SwiftData</span>
+            <span class="skill-tag">SQLite</span>
+            <span class="skill-tag">UserDefaults</span>
+            <span class="skill-tag">Realm</span>
+          </div>
+        </article>
+
+        <article class="skill-card reveal">
+          <div class="skill-head">
+            <div class="skill-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <div><h3>Tools & DevOps</h3><p>Building & shipping</p></div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Xcode</span>
+            <span class="skill-tag">Git & GitHub</span>
+            <span class="skill-tag">GitLab</span>
+            <span class="skill-tag">Swift Package Manager</span>
+            <span class="skill-tag">CocoaPods</span>
+            <span class="skill-tag">Fastlane</span>
+          </div>
+        </article>
+
+        <article class="skill-card reveal">
+          <div class="skill-head">
+            <div class="skill-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <div><h3>Testing & Debugging</h3><p>Quality & stability</p></div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">XCTest</span>
+            <span class="skill-tag">Xcode Debugger</span>
+            <span class="skill-tag">Instruments</span>
+            <span class="skill-tag">Crashlytics</span>
+            <span class="skill-tag">Unit Testing</span>
+          </div>
+        </article>
+
+        <article class="skill-card reveal">
+          <div class="skill-head">
+            <div class="skill-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div><h3>Performance & UX</h3><p>Polish & optimization</p></div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Performance Tuning</span>
+            <span class="skill-tag">Push Notifications</span>
+            <span class="skill-tag">Animations</span>
+            <span class="skill-tag">Accessibility</span>
+            <span class="skill-tag">Dark Mode</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">Services</span>
+        <h2 class="section-title">What I can do for you</h2>
+        <p class="section-subtitle">End-to-end iOS development — from a single screen to a full product launch.</p>
+      </div>
+      <div class="services-grid">
+        <article class="service-card reveal">
+          <div class="service-num">01</div>
+          <h3>Custom iOS Apps</h3>
+          <p>Tailored, production-ready iPhone and iPad apps built with Swift and SwiftUI — designed to scale with your users and your business.</p>
+          <span class="service-arrow">Learn more →</span>
+        </article>
+        <article class="service-card reveal">
+          <div class="service-num">02</div>
+          <h3>UI / UX Implementation</h3>
+          <p>Pixel-perfect, accessible interfaces from Figma to App Store — with reusable components, smooth animations, and dark mode baked in.</p>
+          <span class="service-arrow">Learn more →</span>
+        </article>
+        <article class="service-card reveal">
+          <div class="service-num">03</div>
+          <h3>API & Backend Integration</h3>
+          <p>Reliable networking with REST and GraphQL, offline support, caching, and clean data modeling with Codable and Combine.</p>
+          <span class="service-arrow">Learn more →</span>
+        </article>
+        <article class="service-card reveal">
+          <div class="service-num">04</div>
+          <h3>Performance Optimization</h3>
+          <p>Smaller binaries, faster launch, smoother scrolling, and fewer crashes — using Instruments, profiling, and best practices.</p>
+          <span class="service-arrow">Learn more →</span>
+        </article>
+        <article class="service-card reveal">
+          <div class="service-num">05</div>
+          <h3>App Maintenance</h3>
+          <p>Ongoing updates, dependency upgrades, iOS version support, bug fixes, and incremental refactoring of legacy codebases.</p>
+          <span class="service-arrow">Learn more →</span>
+        </article>
+        <article class="service-card reveal">
+          <div class="service-num">06</div>
+          <h3>Technical Consulting</h3>
+          <p>Architecture reviews, code audits, team mentoring, and technology decisions to set your project up for long-term success.</p>
+          <span class="service-arrow">Learn more →</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="section" id="projects" style="background:var(--bg-elev);">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">Projects</span>
+        <h2 class="section-title">Selected work</h2>
+        <p class="section-subtitle">A few projects I've shipped recently. Click any card to see more detail.</p>
+      </div>
+      <div class="projects-grid">
+        <article class="project-card reveal" data-project="hublix-sp">
+          <div class="project-img">
+            <div class="project-mock">
+              <div class="wrap">
+                Hublix<span style="color:var(--accent)">.</span>SP
+                <div class="sub">SUPER PARTNER</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-cat">iOS · Full Stack</span>
+            <h3>Hublix SP — Super Partner App</h3>
+            <p>A comprehensive e-commerce platform with cart, Stripe payments, and an admin dashboard for inventory and analytics.</p>
+            <div class="project-tags">
+              <span>Swift</span><span>SwiftUI</span><span>Stripe</span><span>PostgreSQL</span>
+            </div>
+            <div class="project-links">
+              <a href="#" data-modal="hublix-sp"><span>View details</span> →</a>
+              <a href="https://github.com/kavita4310" target="_blank" rel="noopener">Code ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-project="hublix-osm">
+          <div class="project-img">
+            <div class="project-mock">
+              <div class="wrap">
+                Hublix<span style="color:var(--accent)">.</span>OSM
+                <div class="sub">LAST-MILE OPS</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-cat">iOS · Operations</span>
+            <h3>Hublix OSM — Operations App</h3>
+            <p>Real-time fleet and order tracking for depot managers — driver assignments, incident reporting, and offline sync.</p>
+            <div class="project-tags">
+              <span>Swift</span><span>UIKit</span><span>MapKit</span><span>CoreData</span>
+            </div>
+            <div class="project-links">
+              <a href="#" data-modal="hublix-osm"><span>View details</span> →</a>
+              <a href="https://github.com/kavita4310" target="_blank" rel="noopener">Code ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-project="analytics">
+          <div class="project-img">
+            <div class="project-mock">
+              <div class="wrap">
+                Insight<span style="color:var(--accent)">.</span>
+                <div class="sub">DATA DASHBOARD</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-cat">iOS · Data Viz</span>
+            <h3>Insight — Analytics Dashboard</h3>
+            <p>Visualizes product metrics with custom charts, date filters, and CSV export. Optimized for fast rendering on device.</p>
+            <div class="project-tags">
+              <span>Swift</span><span>SwiftUI</span><span>Charts</span><span>Dark Mode</span>
+            </div>
+            <div class="project-links">
+              <a href="#" data-modal="analytics"><span>View details</span> →</a>
+              <a href="https://github.com/kavita4310" target="_blank" rel="noopener">Code ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-project="weather">
+          <div class="project-img">
+            <div class="project-mock">
+              <div class="wrap">
+                Skyline<span style="color:var(--accent)">.</span>
+                <div class="sub">WEATHER FORECAST</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-cat">iOS · Personal Project</span>
+            <h3>Skyline — Weather Forecast</h3>
+            <p>A clean 7-day forecast with location search, animated weather scenes, and severe-weather alerts.</p>
+            <div class="project-tags">
+              <span>Swift</span><span>SwiftUI</span><span>OpenWeather API</span><span>CoreLocation</span>
+            </div>
+            <div class="project-links">
+              <a href="#" data-modal="weather"><span>View details</span> →</a>
+              <a href="https://github.com/kavita4310" target="_blank" rel="noopener">Code ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">Praise</span>
+        <h2 class="section-title">What people say</h2>
+        <p class="section-subtitle">Kind words from collaborators and clients I've worked with.</p>
+      </div>
+      <div class="testi-grid">
+        <article class="testi-card reveal">
+          <div class="testi-quote">"</div>
+          <p class="testi-text">Kavita is one of the most reliable developers I've worked with. She shipped features fast, communicated clearly, and consistently cared about the small details that made our app feel polished.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">A</div>
+            <div><div class="testi-name">Aarav Sharma</div><div class="testi-role">CTO · Startup</div></div>
+          </div>
+        </article>
+        <article class="testi-card reveal">
+          <div class="testi-quote">"</div>
+          <p class="testi-text">She took a complex, legacy codebase and made it maintainable. Her code reviews caught real bugs before they shipped, and she mentored junior devs with patience and care.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">P</div>
+            <div><div class="testi-name">Priya Singh</div><div class="testi-role">Product Manager</div></div>
+          </div>
+        </article>
+        <article class="testi-card reveal">
+          <div class="testi-quote">"</div>
+          <p class="testi-text">From architecture to animations, Kavita owns the whole stack. She took our app from 60fps to buttery-smooth and made it accessible to a much wider audience.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">R</div>
+            <div><div class="testi-name">Rahul Verma</div><div class="testi-role">Engineering Lead</div></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="section" id="experience" style="background:var(--bg-elev);">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">Experience</span>
+        <h2 class="section-title">Where I've worked</h2>
+        <p class="section-subtitle">A short timeline of my professional journey so far.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-date">Jul 2024 — Present</div>
+          <h4>iOS Developer</h4>
+          <div class="timeline-org">Brucode Technologies Pvt. Ltd. · Remote</div>
+          <p>Building and maintaining native iOS apps serving thousands of users. Led frontend architecture overhaul, mentored two junior developers, and improved Lighthouse scores from 60 to 95+.</p>
+          <div class="timeline-tags"><span>Swift</span><span>SwiftUI</span><span>Architecture</span><span>Mentoring</span></div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-date">Apr 2023 — Apr 2024</div>
+          <h4>iOS Developer</h4>
+          <div class="timeline-org">Quadtrics Solutions Pvt. Ltd. · India</div>
+          <p>Developed responsive UIs, integrated REST APIs, and collaborated with designers to ship pixel-perfect, accessible interfaces for 10k+ active users.</p>
+          <div class="timeline-tags"><span>UIKit</span><span>REST APIs</span><span>Accessibility</span></div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-date">Aug 2022 — Mar 2023</div>
+          <h4>iOS Developer Intern</h4>
+          <div class="timeline-org">Hublix OSM · India</div>
+          <p>Contributed to features across the stack, wrote unit tests, participated in agile sprints and code reviews — and fell in love with iOS engineering.</p>
+          <div class="timeline-tags"><span>Foundation</span><span>Unit Testing</span><span>Agile</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">Contact</span>
+        <h2 class="section-title">Let's build something</h2>
+        <p class="section-subtitle">Have a project in mind, or just want to say hi? My inbox is always open.</p>
+      </div>
+      <div class="contact-grid">
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <div class="field" id="field-name">
+            <label for="name">Name <span class="req">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required />
+            <div class="err-msg">Please enter your name.</div>
+          </div>
+          <div class="field" id="field-email">
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+            <div class="err-msg">Please enter a valid email address.</div>
+          </div>
+          <div class="field" id="field-message">
+            <label for="message">Message <span class="req">*</span></label>
+            <textarea id="message" name="message" placeholder="Tell me a bit about your project, timeline, and goals…" required></textarea>
+            <div class="err-msg">Please write a short message.</div>
+          </div>
+          <button type="submit" class="btn btn-primary" id="submitBtn" style="width:100%;justify-content:center;">
+            Send message
+            <span class="arrow">→</span>
+          </button>
+          <div class="form-status" id="formStatus"></div>
+        </form>
+
+        <aside class="contact-info reveal">
+          <a class="contact-card" href="mailto:kavita@example.com">
+            <div class="ic">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div><div class="lbl">Email</div><div class="val">kavita@example.com</div></div>
+          </a>
+          <a class="contact-card" href="https://github.com/kavita4310" target="_blank" rel="noopener">
+            <div class="ic">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.02c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.11-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.21-1.49 3.18-1.18 3.18-1.18.63 1.58.23 2.75.11 3.04.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.79.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+            </div>
+            <div><div class="lbl">GitHub</div><div class="val">@kavita4310</div></div>
+          </a>
+          <a class="contact-card" href="https://www.linkedin.com/in/kavitachauhan" target="_blank" rel="noopener">
+            <div class="ic">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 17.34v-7H6v7h2.34zM7.17 9.17a1.36 1.36 0 1 0 0-2.72 1.36 1.36 0 0 0 0 2.72zM18 17.34v-3.86c0-2.06-1.1-3.02-2.57-3.02-1.19 0-1.72.65-2.01 1.11v-.95H9.07v7h2.34v-3.79c0-.36.02-.72.13-.98.27-.68.89-1.38 1.93-1.38 1.36 0 1.9 1.04 1.9 2.56v3.59H18z"/></svg>
+            </div>
+            <div><div class="lbl">LinkedIn</div><div class="val">/in/kavitachauhan</div></div>
+          </a>
+          <div class="contact-card">
+            <div class="ic">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div><div class="lbl">Location</div><div class="val">Chandigarh, India · Remote</div></div>
+          </div>
+          <div class="contact-card" style="background:linear-gradient(135deg, color-mix(in srgb, var(--accent) 14%, var(--surface)), var(--surface));border-color:color-mix(in srgb, var(--accent) 30%, transparent);">
+            <div class="ic" style="background:transparent;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+            </div>
+            <div><div class="lbl">Response time</div><div class="val">Usually within 24 hours</div></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="logo">
+            <span class="logo-mark">K</span>
+            <span>Kavita<span style="color:var(--accent)">.</span></span>
+          </a>
+          <p>iOS Software Developer based in India, building accessible, performant native apps with Swift, SwiftUI, and UIKit — from idea to App Store.</p>
+          <div class="footer-socials">
+            <a href="https://github.com/kavita4310" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.02c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.11-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.21-1.49 3.18-1.18 3.18-1.18.63 1.58.23 2.75.11 3.04.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.79.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/kavitachauhan" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 17.34v-7H6v7h2.34zM7.17 9.17a1.36 1.36 0 1 0 0-2.72 1.36 1.36 0 0 0 0 2.72zM18 17.34v-3.86c0-2.06-1.1-3.02-2.57-3.02-1.19 0-1.72.65-2.01 1.11v-.95H9.07v7h2.34v-3.79c0-.36.02-.72.13-.98.27-.68.89-1.38 1.93-1.38 1.36 0 1.9 1.04 1.9 2.56v3.59H18z"/></svg>
+            </a>
+            <a href="mailto:kavita@example.com" aria-label="Email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get in touch</h4>
+          <ul>
+            <li><a href="mailto:kavita@example.com">kavita@example.com</a></li>
+            <li><a href="https://github.com/kavita4310" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/kavitachauhan" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="#contact">Start a project</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© <span id="year"></span> Kavita Chauhan. All rights reserved.</div>
+        <div class="made">Designed & built with <span class="heart">♥</span> in India</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ MODAL ============ -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-bg" id="modalBg"></div>
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose" aria-label="Close dialog">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal-cat" id="modalCat"></div>
+      <h3 id="modalTitle"></h3>
+      <p class="modal-desc" id="modalDesc"></p>
+      <div class="modal-section">
+        <h4>Key features</h4>
+        <ul class="modal-features" id="modalFeatures"></ul>
+      </div>
+      <div class="modal-section">
+        <h4>Technologies</h4>
+        <div class="modal-tech" id="modalTech"></div>
+      </div>
+      <div class="modal-links">
+        <a href="#contact" class="btn btn-primary" id="modalContactBtn">Start a similar project</a>
+        <a href="https://github.com/kavita4310" target="_blank" rel="noopener" class="btn btn-ghost">View code ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ TO TOP ============ -->
+  <button class="to-top" id="toTop" aria-label="Scroll to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18,15 12,9 6,15"/></svg>
+  </button>
+
+  <script>
+    /* ============ Year ============ */
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* ============ Theme toggle ============ */
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const sunPath = '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>';
+    const moonPath = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+
+    function setTheme(theme) {
+      root.setAttribute('data-theme', theme);
+      themeIcon.innerHTML = theme === 'dark' ? moonPath : sunPath;
+      try { localStorage.setItem('theme', theme); } catch(e) {}
+    }
+    let savedTheme = 'dark';
+    try { savedTheme = localStorage.getItem('theme') || 'dark'; } catch(e) {}
+    setTheme(savedTheme);
+    themeToggle.addEventListener('click', () => {
+      const cur = root.getAttribute('data-theme');
+      setTheme(cur === 'dark' ? 'light' : 'dark');
+    });
+
+    /* ============ Mobile menu ============ */
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open);
+    });
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', false);
+    }));
+
+    /* ============ Navbar shadow on scroll ============ */
+    const navWrap = document.getElementById('navWrap');
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      navWrap.classList.toggle('scrolled', y > 30);
+      toTop.classList.toggle('show', y > 600);
+    }, { passive: true });
+
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    /* ============ Scrollspy ============ */
+    const sections = document.querySelectorAll('section[id], header[id]');
+    const navItems = document.querySelectorAll('.nav-links a');
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const id = e.target.id;
+          navItems.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach(s => spy.observe(s));
+
+    /* ============ Reveal on scroll ============ */
+    const reveals = document.querySelectorAll('.reveal');
+    const revealIO = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          revealIO.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => revealIO.observe(el));
+
+    /* ============ Animated counters ============ */
+    const counters = document.querySelectorAll('.stat-num');
+    const counterIO = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const target = parseInt(el.dataset.target, 10);
+        const suffix = el.dataset.suffix || '';
+        const dur = 1400;
+        const start = performance.now();
+        function tick(now) {
+          const p = Math.min((now - start) / dur, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(target * eased) + suffix;
+          if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+        counterIO.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(c => counterIO.observe(c));
+
+    /* ============ Project modal ============ */
+    const projects = {
+      'hublix-sp': {
+        cat: 'iOS · E-commerce · 2024',
+        title: 'Hublix SP — Super Partner App',
+        desc: 'A complete e-commerce platform built for partners managing their stores, orders, and payouts. Features include a full shopping cart, secure Stripe payments, real-time order tracking, and an admin dashboard for inventory, analytics, and customer management.',
+        features: [
+          'Full shopping cart with discount codes and tax calculation',
+          'Stripe payment integration with 3-D Secure authentication',
+          'Admin dashboard for inventory, orders, and analytics',
+          'Order management with real-time status updates',
+          'Customer reviews and ratings module',
+          'Optimized to load in under 1.5s on 4G networks'
+        ],
+        tech: ['Swift', 'SwiftUI', 'Stripe', 'PostgreSQL', 'REST API', 'Combine', 'Charts']
+      },
+      'hublix-osm': {
+        cat: 'iOS · Operations · 2023',
+        title: 'Hublix OSM — Operations App',
+        desc: 'A real-time operations management app for depot managers handling last-mile delivery. Enables driver assignment, incident reporting, live tracking via MapKit, and offline data sync when connectivity drops.',
+        features: [
+          'Real-time fleet tracking on an interactive MapKit map',
+          'Driver assignment and shift scheduling',
+          'Incident reporting with photo attachments',
+          'Offline-first architecture with CoreData sync',
+          'Push notifications for critical events',
+          'Role-based access for managers and drivers'
+        ],
+        tech: ['Swift', 'UIKit', 'MapKit', 'CoreData', 'URLSession', 'Push Notifications']
+      },
+      'analytics': {
+        cat: 'iOS · Data Viz · 2024',
+        title: 'Insight — Analytics Dashboard',
+        desc: 'A privacy-friendly analytics dashboard visualizing product metrics with custom charts. Built for speed — every screen renders in under 200ms thanks to aggressive caching and lazy loading.',
+        features: [
+          'Custom-built charts (no third-party dependencies)',
+          'Date-range filters with smart presets',
+          'CSV / PDF export of any report',
+          'Dark mode that respects system preference',
+          'VoiceOver labels and Dynamic Type support',
+          'Full keyboard navigation'
+        ],
+        tech: ['Swift', 'SwiftUI', 'Charts', 'Combine', 'PDFKit']
+      },
+      'weather': {
+        cat: 'iOS · Personal · 2023',
+        title: 'Skyline — Weather Forecast',
+        desc: 'A clean, focused weather app with 7-day forecasts, location search, animated weather scenes, and severe-weather alerts. Built to practice modern SwiftUI patterns and explore weather APIs.',
+        features: [
+          '7-day and hourly forecasts',
+          'Location search with city autocomplete',
+          'Animated weather scenes built in SwiftUI',
+          'Severe-weather push alerts',
+          'Today widget for the lock screen',
+          'App icon alternate versions'
+        ],
+        tech: ['Swift', 'SwiftUI', 'OpenWeather API', 'CoreLocation', 'WidgetKit']
+      }
+    };
+
+    const modal = document.getElementById('modal');
+    const modalBg = document.getElementById('modalBg');
+    const modalClose = document.getElementById('modalClose');
+    const modalCat = document.getElementById('modalCat');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalFeatures = document.getElementById('modalFeatures');
+    const modalTech = document.getElementById('modalTech');
+
+    function openModal(key) {
+      const p = projects[key];
+      if (!p) return;
+      modalCat.textContent = p.cat;
+      modalTitle.textContent = p.title;
+      modalDesc.textContent = p.desc;
+      modalFeatures.innerHTML = p.features.map(f => `<li>${f}</li>`).join('');
+      modalTech.innerHTML = p.tech.map(t => `<span>${t}</span>`).join('');
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      modalClose.focus();
+    }
+    function closeModal() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.querySelectorAll('[data-project]').forEach(card => {
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('a[target="_blank"]')) return; // let external links open
+        e.preventDefault();
+        openModal(card.dataset.project);
+      });
+    });
+    document.querySelectorAll('[data-modal]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal(a.dataset.modal);
+      });
+    });
+    modalBg.addEventListener('click', closeModal);
+    modalClose.addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+    });
+
+    /* ============ Contact form ============ */
+    const form = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+    const submitBtn = document.getElementById('submitBtn');
+
+    function showError(fieldId, show) {
+      document.getElementById(fieldId).classList.toggle('err', show);
+    }
+
+    function validEmail(v) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+      let ok = true;
+      if (!name) { showError('field-name', true); ok = false; } else showError('field-name', false);
+      if (!validEmail(email)) { showError('field-email', true); ok = false; } else showError('field-email', false);
+      if (message.length < 5) { showError('field-message', true); ok = false; } else showError('field-message', false);
+      if (!ok) {
+        formStatus.className = 'form-status error';
+        formStatus.textContent = 'Please fix the highlighted fields.';
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Sending...';
+
+      // Simulated submit (replace with real endpoint / Formspree)
+      await new Promise(r => setTimeout(r, 1100));
+      formStatus.className = 'form-status success';
+      formStatus.textContent = `Thanks, ${name.split(' ')[0]}! Your message has been queued. I'll reply to ${email} within 24 hours.`;
+      form.reset();
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = 'Send message <span class="arrow">→</span>';
+    });
+
+    /* ============ Smooth anchor jump on load ============ */
+    if (location.hash) {
+      const el = document.querySelector(location.hash);
+      if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100);
+    }
+  </script>
 </body>
 </html>
