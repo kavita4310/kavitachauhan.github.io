@@ -316,6 +316,55 @@ section {
         font-size: 1.25rem;
     }
 }
+.services-section {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #f9f9f9; /* Change based on your theme */
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.project-frame {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eee;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.project-frame:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.project-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.project-frame h3 {
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.project-frame p {
+  color: #666;
+  line-height: 1.6;
+}
 
 /* ===========================
    NAVIGATION
